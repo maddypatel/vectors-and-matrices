@@ -30,7 +30,6 @@ def test_shape_vectors():
 def test_vector_add():
     """
     [a b]  + [c d]  = [a+c b+d]
-
     Matrix + Matrix = Matrix
     """
     assert vector_add(v, w) == [1, 5, 4]
@@ -51,7 +50,6 @@ def test_vector_add_checks_shapes():
 def test_vector_sub():
     """
     [a b]  - [c d]  = [a-c b-d]
-
     Matrix + Matrix = Matrix
     """
     assert vector_sub(v, w) == [1, 1, -4]
@@ -80,7 +78,6 @@ def test_vector_sum_checks_shapes():
 def test_dot():
     """
     dot([a b], [c d])   = a * c + b * d
-
     dot(Vector, Vector) = Scalar
     """
     assert dot(w, y) == 160
@@ -97,7 +94,6 @@ def test_dot_checks_shapes():
 def test_vector_multiply():
     """
     [a b]  *  Z     = [a*Z b*Z]
-
     Vector * Scalar = Vector
     """
     assert vector_multiply(v, 0.5) == [0.5, 1.5, 0]
@@ -107,7 +103,6 @@ def test_vector_multiply():
 def test_vector_mean():
     """
     mean([a b], [c d]) = [mean(a, c) mean(b, d)]
-
     mean(Vector)       = Vector
     """
     assert vector_mean(m, n) == [4, 2]
@@ -120,7 +115,6 @@ def test_vector_mean():
 def test_magnitude():
     """
     magnitude([a b])  = sqrt(a^2 + b^2)
-
     magnitude(Vector) = Scalar
     """
     assert magnitude(m) == 5
@@ -181,7 +175,6 @@ def test_matrix_scalar_multiply():
     """
     [[a b]   *  Z   =   [[a*Z b*Z]
      [c d]]              [c*Z d*Z]]
-
     Matrix * Scalar = Matrix
     """
     assert matrix_scalar_multiply(C, 3) == [[3, 6],
@@ -194,7 +187,6 @@ def test_matrix_vector_multiply():
     [[a b]   *  [x   =   [a*x+b*y
      [c d]       y]       c*x+d*y
      [e f]                e*x+f*y]
-
     Matrix * Vector = Vector
     """
     assert matrix_vector_multiply(A, [2, 5, 4]) == [2, 5, 4]
@@ -215,7 +207,6 @@ def test_matrix_matrix_multiply():
     [[a b]   *  [[w x]   =   [[a*w+b*y a*x+b*z]
      [c d]       [y z]]       [c*w+d*y c*x+d*z]
      [e f]                    [e*w+f*y e*x+f*z]]
-
     Matrix * Matrix = Matrix
     """
     assert matrix_matrix_multiply(A, B) == A
